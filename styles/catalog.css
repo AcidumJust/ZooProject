@@ -1,0 +1,14 @@
+main{
+    background-color: lightgrey;
+}
+.catalog-section{
+    background-color: yellow;
+}
+.catalog-block ul{
+    display: none;
+}
+.catalog-block p:hover:active{
+    background-color: red;
+
+
+}

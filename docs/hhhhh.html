@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" bordercolor="red" cellspacing="50" bgcolor="#ffe5ed" background="../images/dog.png">
+    <caption align="top">Описание таблицы</caption>
+    <tr bgcolor="#663399">
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td bgcolor="#7fffd4">3</td>
+        <td>4</td>
+    </tr>
+</table>
+<p></p>
+<!--frame: void above below rhs lhs vsides hsides border-->
+<!--rules: none cols rows groups all-->
+<table border="4" height="600" width="70%" background="../images/dog.png" frame="void" rules="none">
+    <tr>
+        <td align="center">
+            <table border="1" bordercolor="red" cellspacing="50" bgcolor="#ffe5ed" background="../images/dog.png">
+            <caption align="top">Описание таблицы</caption>
+            <tr bgcolor="#663399">
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td bgcolor="#7fffd4">3</td>
+                <td>4</td>
+            </tr>
+        </table>
+        </td>
+        <td valign="bottom">3333333</td>
+    </tr>
+    <tr>
+        <td align="right"></td>
+        <td align="center">
+            <table border="1" bordercolor="red" cellspacing="50" bgcolor="#ffe5ed" background="../images/dog.png">
+        <caption align="top">Описание таблицы</caption>
+        <tr bgcolor="#663399">
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td bgcolor="#7fffd4">3</td>
+            <td>4</td>
+        </tr>
+    </table>
+    </td>
+    </tr>
+</table>
+<p></p>
+<table border="1">
+    <tr>
+        <td rowspan="3">1111</td>
+        <td rowspan="2">2222</td>
+        <td colspan="2">3333</td>
+    </tr>
+    <tr>
+        <td>4444</td>
+        <td colspan="2" rowspan="2">5555</td>
+        <td>6666</td>
+    </tr>
+    <tr>
+        <td>7777</td>
+        <td>8888</td>
+    </tr>
+    <tr>
+        <td colspan="5">9999</td>
+    </tr>
+</table>
+</body>
+</html>
