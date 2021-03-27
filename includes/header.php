@@ -8,7 +8,42 @@ echo <<<HERE
         <nav>
             <ul class="main-menu">
                 <li class="main-menu-item">О компании</li>
-                <li class="main-menu-item">Каталог</li>
+                <li class="main-menu-item"><a>Каталог</a>
+                    <ul class="submenu-category">
+                        <li class="submenu-category-item"><a>Cat1</a>
+                            <ul class="submenu-category-sublist">
+                                <li><a>Товары1</a></li>
+                                <li><a>Товары2</a></li>
+                                <li><a>Товары3</a></li>
+                                <li><a>Товары3</a></li>
+                                <li><a>Товары3</a></li>
+                                <li><a>Товары3</a></li>
+                                <li><a>Товары3</a></li>
+                                <li><a>Товары3</a></li>
+                                <li><a>Товары3</a></li>
+                                <li><a>Товары3</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-category-item"><a>Cat2</a>
+                            <ul class="submenu-category-sublist">
+                                <li><a>Товары11</a></li>
+                                <li><a>Товары2</a></li>
+                                <li><a>Товары3</a></li>
+                            </ul></li>
+                        <li class="submenu-category-item"><a>Cat3</a>
+                            <ul class="submenu-category-sublist">
+                                <li><a>Товары1</a></li>
+                                <li><a>Товары222</a></li>
+                                <li><a>Товары3</a></li>
+                            </ul></li>
+                        <li class="submenu-category-item"><a>Cat4</a>
+                            <ul class="submenu-category-sublist">
+                                <li><a>Товары1</a></li>
+                                <li><a>Товары2</a></li>
+                                <li><a>Товары333</a></li>
+                            </ul></li>
+                    </ul>
+                </li>
                 <li class="main-menu-item">Акции</li>
                 <li class="main-menu-item">Оплата и доставка</li>
                 <li class="main-menu-item">Контакты</li>
