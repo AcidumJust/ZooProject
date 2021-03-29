@@ -7,15 +7,23 @@ main{
 .catalog-section{
     background-color: yellow;
     min-width: fit-content;
+    width: 20%;
 }
-.catalog-block ul{
-    display: none;
+.catalog-section > p{
+    font-size: 35px;
+    padding: 15px;
 }
-.catalog-block p:hover:active{
+.catalog-block > p:hover:active{
     background-color: red;
 }
-.catalog-block p:hover{
+.catalog-block > p:hover{
     background-color: whitesmoke;
+}
+.catalog-block > li{
+    padding: 0 15px;
+}
+.catalog-block > li:hover{
+    border: 2px solid purple;
 }
 /*стили блока продуктов*/
 .products-section{
@@ -28,6 +36,9 @@ main{
     max-width: 200px;
     min-width: 100px;
     margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .product-item:hover{
     border-color: red;
@@ -37,11 +48,15 @@ main{
 }
 .product-item > form{
     display: flex;
-    background: purple;
-    /*margin: auto;*/
-    /*bottom: 0;*/
+    padding-top: 5px;
+    width: 100%;
+    /*background: purple;*/
 }
 .product-item > form > button{
-    margin: auto;
+    /*bottom: 0;*/
+    margin: auto auto 0 auto;
     /*background-color: red;*/
+}
+.category-name{
+    font-size: 25px;
 }

@@ -18,32 +18,14 @@
         <section class="catalog-section">
             <p>Каталог</p>
             <ul class="catalog-block">
-                <p>Категория 1
-                    <ul>
-                        <li>СубКатегория 1</li>
-                        <li>СубКатегория 1</li>
-                        <li>СубКатегория 1</li>
-                        <li>СубКатегория 1</li>
-                        <li>СубКатегория 1</li>
-                    </ul>
-                </p>
-                <p>Категория 2
-                    <ul>
-                        <li>СубКатегория 2</li>
-                        <li>СубКатегория 2</li>
-                        <li>СубКатегория 2</li>
-                        <li>СубКатегория 2</li>
-                        <li>СубКатегория 2</li>
-                    </ul>
-                </p>
-                <p>Категория 3</p>
-                <ul>
-                    <li>СубКатегория 3</li>
-                    <li>СубКатегория 3</li>
-                    <li>СубКатегория 3</li>
-                    <li>СубКатегория 3</li>
-                    <li>СубКатегория 3</li>
-                </ul>
+                <?php
+                $link = mysqli_connect($host,$user,$password,$database) or die("Error".mysqli_error($link));
+                mysqli_set_charset($link,'utf8');
+                $res = mysqli_query($link,"SELECT * FROM category WHERE category_name != 'Акции' ORDER BY 1 DESC");
+                while ($row = mysqli_fetch_array($res)){
+                    echo "<li><a class='category-name' href=''>".$row['category_name']."</a></li>";
+                }
+                ?>
             </ul>
         </section>
         <section class="products-section">
