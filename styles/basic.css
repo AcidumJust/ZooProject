@@ -40,10 +40,11 @@ nav{
 }
 
 /*выпадающее меню*/
-.main-menu-item:hover .submenu-category{
+.main-menu-item:hover > .submenu-category{
     visibility: visible;
     pointer-events: all;
 }
+
 .submenu-category{
     list-style: none;
     position: absolute;
@@ -76,8 +77,9 @@ nav{
     padding: 5px 0;
     border-radius: 5px;
     border: lightgrey 1px solid;
-    margin-left: 80%;
+    margin-left: 100%;
     top:0;
+    left: 0;
     min-height: 100%;
     visibility: hidden;
 }
@@ -85,9 +87,11 @@ nav{
 .submenu-category-item:hover .submenu-category-sublist{
     visibility: visible;
 }
+
 .submenu-category-sublist > li {
     padding: 3px 15px;
 }
+
 .submenu-category-sublist > li:hover {
     text-decoration: underline;
     padding: 5px 15px;

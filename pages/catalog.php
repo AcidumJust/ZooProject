@@ -14,38 +14,90 @@
     <?php include_once ("../includes/header.php");?>
 </header>
 <main>
-    <section class="catalog-section">
-        <p>Каталог</p>
-        <ul class="catalog-block">
-            <p>Категория 1
+    <div class="products">
+        <section class="catalog-section">
+            <p>Каталог</p>
+            <ul class="catalog-block">
+                <p>Категория 1
+                    <ul>
+                        <li>СубКатегория 1</li>
+                        <li>СубКатегория 1</li>
+                        <li>СубКатегория 1</li>
+                        <li>СубКатегория 1</li>
+                        <li>СубКатегория 1</li>
+                    </ul>
+                </p>
+                <p>Категория 2
+                    <ul>
+                        <li>СубКатегория 2</li>
+                        <li>СубКатегория 2</li>
+                        <li>СубКатегория 2</li>
+                        <li>СубКатегория 2</li>
+                        <li>СубКатегория 2</li>
+                    </ul>
+                </p>
+                <p>Категория 3</p>
                 <ul>
-                    <li>СубКатегория 1</li>
-                    <li>СубКатегория 1</li>
-                    <li>СубКатегория 1</li>
-                    <li>СубКатегория 1</li>
-                    <li>СубКатегория 1</li>
+                    <li>СубКатегория 3</li>
+                    <li>СубКатегория 3</li>
+                    <li>СубКатегория 3</li>
+                    <li>СубКатегория 3</li>
+                    <li>СубКатегория 3</li>
                 </ul>
-            </p>
-            <p>Категория 2
-                <ul>
-                    <li>СубКатегория 2</li>
-                    <li>СубКатегория 2</li>
-                    <li>СубКатегория 2</li>
-                    <li>СубКатегория 2</li>
-                    <li>СубКатегория 2</li>
-                </ul>
-            </p>
-            <p>Категория 3</p>
-            <ul>
-                <li>СубКатегория 3</li>
-                <li>СубКатегория 3</li>
-                <li>СубКатегория 3</li>
-                <li>СубКатегория 3</li>
-                <li>СубКатегория 3</li>
             </ul>
-        </ul>
+        </section>
+        <section class="products-section">
+        <div class="product-item">
+            <img src="../images/popugai.png"/>
+            <p>Название товара</p></p>
+            <form>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <div class="product-item">
+            <img src="../images/popugai.png"/>
+            <p>Название товара может быть длинным</p>
+            <form>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <div class="product-item">
+            <img src="../images/popugai.png"/>
+            <p>Название товара может быть длинным</p>
+            <form>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <div class="product-item">
+            <img src="../images/popugai.png"/>
+            <p>Название товара может быть длинным</p>
+            <form>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <div class="product-item">
+            <img src="../images/popugai.png"/>
+            <p>Название товара может быть длинным</p>
+            <form>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <div class="product-item">
+            <img src="../images/popugai.png"/>
+            <p>Название товара может быть длинным</p>
+            <form>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+        <div class="product-item">
+            <img src="../images/popugai.png"/>
+            <p>Название товара может быть длинным</p>
+            <form>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
     </section>
-    <section class="products-section"></section>
+    </div>
 </main>
 <footer>
     <?php include_once ("../includes/footer.php");?>

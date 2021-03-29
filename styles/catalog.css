@@ -1,12 +1,47 @@
 main{
     background-color: lightgrey;
 }
+.products{
+    display: flex;
+}
 .catalog-section{
     background-color: yellow;
+    min-width: fit-content;
 }
 .catalog-block ul{
     display: none;
 }
 .catalog-block p:hover:active{
     background-color: red;
+}
+.catalog-block p:hover{
+    background-color: whitesmoke;
+}
+/*стили блока продуктов*/
+.products-section{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.product-item{
+    border: lightgrey solid 2px;
+    max-width: 200px;
+    min-width: 100px;
+    margin: 5px;
+}
+.product-item:hover{
+    border-color: red;
+}
+.product-item > img{
+    width: 100%;
+}
+.product-item > form{
+    display: flex;
+    background: purple;
+    /*margin: auto;*/
+    /*bottom: 0;*/
+}
+.product-item > form > button{
+    margin: auto;
+    /*background-color: red;*/
 }

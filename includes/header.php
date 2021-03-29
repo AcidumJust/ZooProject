@@ -9,39 +9,47 @@ echo <<<HERE
             <ul class="main-menu">
                 <li class="main-menu-item">О компании</li>
                 <li class="main-menu-item"><a>Каталог</a>
-                    <ul class="submenu-category">
-                        <li class="submenu-category-item"><a>Cat1</a>
-                            <ul class="submenu-category-sublist">
-                                <li><a>Товары1</a></li>
-                                <li><a>Товары2</a></li>
-                                <li><a>Товары3</a></li>
-                                <li><a>Товары3</a></li>
-                                <li><a>Товары3</a></li>
-                                <li><a>Товары3</a></li>
-                                <li><a>Товары3</a></li>
-                                <li><a>Товары3</a></li>
-                                <li><a>Товары3</a></li>
-                                <li><a>Товары3</a></li>
-                            </ul>
-                        </li>
-                        <li class="submenu-category-item"><a>Cat2</a>
-                            <ul class="submenu-category-sublist">
-                                <li><a>Товары11</a></li>
-                                <li><a>Товары2</a></li>
-                                <li><a>Товары3</a></li>
-                            </ul></li>
-                        <li class="submenu-category-item"><a>Cat3</a>
-                            <ul class="submenu-category-sublist">
-                                <li><a>Товары1</a></li>
-                                <li><a>Товары222</a></li>
-                                <li><a>Товары3</a></li>
-                            </ul></li>
-                        <li class="submenu-category-item"><a>Cat4</a>
-                            <ul class="submenu-category-sublist">
-                                <li><a>Товары1</a></li>
-                                <li><a>Товары2</a></li>
-                                <li><a>Товары333</a></li>
-                            </ul></li>
+                    <ul class="submenu-category"> 
+HERE;
+    $link = mysqli_connect($host,$user,$password,$database) or die("Error".mysqli_error($link));
+    mysqli_set_charset($link,'utf8');
+    $res = mysqli_query($link,"SELECT * FROM category WHERE category_name != 'Акции' ORDER BY 1 DESC");
+    while ($row = mysqli_fetch_array($res)){
+        echo "<li class='submenu-category-item'><a href=''>".$row['category_name']."</a><ul class='submenu-category-sublist'><li><a>Товары1</a></li></ul></li>";
+    }
+    echo <<<HERE
+<!--                        <li class="submenu-category-item"><a>Cat1</a>-->
+<!--                            <ul class="submenu-category-sublist">-->
+<!--                                <li><a>Товары1</a></li>-->
+<!--                                <li><a>Товары2</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
+<!--                        <li class="submenu-category-item"><a>Cat2</a>-->
+<!--                            <ul class="submenu-category-sublist">-->
+<!--                                <li><a>Товары11</a></li>-->
+<!--                                <li><a>Товары2</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                            </ul></li>-->
+<!--                        <li class="submenu-category-item"><a>Cat3</a>-->
+<!--                            <ul class="submenu-category-sublist">-->
+<!--                                <li><a>Товары1</a></li>-->
+<!--                                <li><a>Товары222</a></li>-->
+<!--                                <li><a>Товары3</a></li>-->
+<!--                            </ul></li>-->
+<!--                        <li class="submenu-category-item"><a>Cat4</a>-->
+<!--                            <ul class="submenu-category-sublist">-->
+<!--                                <li><a>Товары1</a></li>-->
+<!--                                <li><a>Товары2</a></li>-->
+<!--                                <li><a>Товары333</a></li>-->
+<!--                            </ul></li>-->
                     </ul>
                 </li>
                 <li class="main-menu-item">Акции</li>
