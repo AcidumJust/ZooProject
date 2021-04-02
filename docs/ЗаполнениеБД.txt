@@ -1,0 +1,16 @@
+INSERT INTO category(category_name) VALUES ('Собаки');
+INSERT INTO category(category_name) VALUES ('Кошки');
+INSERT INTO category(category_name) VALUES ('Птицы');
+INSERT INTO category(category_name) VALUES ('Грызуны');
+INSERT INTO category(category_name) VALUES ('Рыбы');
+INSERT INTO category(category_name) VALUES ('Акции');
+
+INSERT INTO subcategory VALUES ('Корма'),
+('Игрушки'),('Миски,поилки'),('Аксессуары'),
+('Наполнители'),('Когтеточки'),('Клетки'),
+('Лакомства'),('Оборудование'),('Аквариумы и террариумы'),
+('Ошейники, рулетки, намордники');
+
+INSERT INTO product(product_name, product_count, product_description, product_size, product_color, product_price, product_discount, product_image)
+VALUES ('Корма'),('Игрушки'),('Миски,поилки'),('Аксессуары'),('Наполнители'),('Когтеточки'),('Клетки'),
+('Лакомства'),('Оборудование'),('Аквариумы и террариумы'),('Ошейники, рулетки, намордники');

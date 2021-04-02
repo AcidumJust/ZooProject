@@ -3,11 +3,14 @@ main{
 }
 .products{
     display: flex;
+    padding: 0 0 5px 5px;
 }
 .catalog-section{
     background-color: yellow;
     min-width: fit-content;
     width: 20%;
+    border-radius: 10px;
+    margin-top: 5px;
 }
 .catalog-section > p{
     font-size: 35px;
@@ -20,6 +23,11 @@ main{
     background-color: whitesmoke;
 }
 .catalog-block > li{
+    display: flex;
+}
+.catalog-block > li > a{
+    width: 100%;
+    /*background: red;*/
     padding: 0 15px;
 }
 .catalog-block > li:hover{
@@ -35,15 +43,19 @@ main{
     border: lightgrey solid 2px;
     max-width: 200px;
     min-width: 100px;
-    margin: 5px;
+    margin: 5px 0 0 5px;
     padding: 5px;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 10px;
 }
 .product-item:hover{
     border-color: red;
 }
 .product-item > img{
+    width: 100%;
+}
+.product-item > p{
     width: 100%;
 }
 .product-item > form{

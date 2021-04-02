@@ -31,7 +31,8 @@
         <section class="products-section">
         <div class="product-item">
             <img src="../images/popugai.png"/>
-            <p>Название товара</p></p>
+            <p>Название товара</p>
+            <p>Price</p>
             <form>
                 <button type="submit">Добавить</button>
             </form>
@@ -39,6 +40,7 @@
         <div class="product-item">
             <img src="../images/popugai.png"/>
             <p>Название товара может быть длинным</p>
+            <p>Price</p>
             <form>
                 <button type="submit">Добавить</button>
             </form>
@@ -46,6 +48,7 @@
         <div class="product-item">
             <img src="../images/popugai.png"/>
             <p>Название товара может быть длинным</p>
+            <p>Price</p>
             <form>
                 <button type="submit">Добавить</button>
             </form>
@@ -53,6 +56,7 @@
         <div class="product-item">
             <img src="../images/popugai.png"/>
             <p>Название товара может быть длинным</p>
+            <p>Price</p>
             <form>
                 <button type="submit">Добавить</button>
             </form>
@@ -60,6 +64,7 @@
         <div class="product-item">
             <img src="../images/popugai.png"/>
             <p>Название товара может быть длинным</p>
+            <p>Price</p>
             <form>
                 <button type="submit">Добавить</button>
             </form>

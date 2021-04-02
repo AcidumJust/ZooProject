@@ -1,6 +1,0 @@
-INSERT INTO category(category_name) VALUES ('Собаки');
-INSERT INTO category(category_name) VALUES ('Кошки');
-INSERT INTO category(category_name) VALUES ('Птицы');
-INSERT INTO category(category_name) VALUES ('Грызуны');
-INSERT INTO category(category_name) VALUES ('Рыбы');
-INSERT INTO category(category_name) VALUES ('Акции');
