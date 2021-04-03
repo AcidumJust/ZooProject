@@ -1,59 +1,66 @@
 -- create a table
 CREATE TABLE category (
-    category_name VARCHAR(100) PRIMARY KEY
+                          category_id INT AUTO_INCREMENT PRIMARY KEY,
+                          category_name VARCHAR(100) UNIQUE
 );
 CREATE TABLE subcategory (
-    subcategory_name VARCHAR(100) PRIMARY KEY
+                             subcategory_id INT AUTO_INCREMENT PRIMARY KEY,
+                             subcategory_name VARCHAR(100) UNIQUE
 );
 CREATE TABLE product (
-    product_id INT AUTO_INCREMENT PRIMARY KEY,
-    product_name VARCHAR(100) NOT NULL,
-    product_count INT NOT NULL,
-    product_description TEXT NOT NULL,
-    product_size VARCHAR(100),
-    product_color VARCHAR(100),
-    product_price INT NOT NULL,
-    product_discount DECIMAL(3,2) NOT NULL,
-    product_image VARCHAR(100),
-    CONSTRAINT product_pk
-        UNIQUE (product_name, product_size, product_color)
+                         product_id INT AUTO_INCREMENT PRIMARY KEY,
+                         product_name VARCHAR(100) NOT NULL,
+                         product_count INT NOT NULL,
+                         product_description TEXT NOT NULL,
+                         product_size VARCHAR(100),
+                         product_color VARCHAR(100),
+                         product_price INT NOT NULL,
+                         product_discount DECIMAL(3,2) NOT NULL,
+                         product_image VARCHAR(100),
+                         CONSTRAINT product_pk
+                             UNIQUE (product_name, product_size, product_color)
 );
 CREATE TABLE product_catalog_tbl (
-    product_id INT NOT NULL,
-    category_name VARCHAR(100) NOT NULL,
-    subcategory_name VARCHAR(100) NOT NULL,
-    CONSTRAINT product_catalog_tbl_pk
-        PRIMARY KEY (product_id, category_name),
-    CONSTRAINT product_catalog_tbl_product_fk
-        FOREIGN KEY (product_id)  REFERENCES product (product_id),
-    CONSTRAINT product_catalog_tbl_category_fk
-        FOREIGN KEY (category_name)  REFERENCES category (category_name),
-    CONSTRAINT product_catalog_tbl_subcategory_fk
-        FOREIGN KEY (subcategory_name)  REFERENCES subcategory (subcategory_name)
+                                     product_id INT NOT NULL,
+                                     category_id INT NOT NULL,
+                                     subcategory_id INT NOT NULL,
+                                     CONSTRAINT product_catalog_tbl_pk
+                                         PRIMARY KEY (product_id, category_id,subcategory_id),
+                                     CONSTRAINT product_catalog_tbl_product_fk
+                                         FOREIGN KEY (product_id)  REFERENCES product (product_id),
+                                     CONSTRAINT product_catalog_tbl_category_fk
+                                         FOREIGN KEY (category_id)  REFERENCES category (category_id),
+                                     CONSTRAINT product_catalog_tbl_subcategory_fk
+                                         FOREIGN KEY (subcategory_id)  REFERENCES subcategory (subcategory_id)
 );
 CREATE TABLE client (
-    client_login VARCHAR(100) PRIMARY KEY,
-    client_password VARCHAR(100) NOT NULL,
-    client_email VARCHAR(100),
-    client_adress VARCHAR(100),
-    client_tel VARCHAR(100)
+                        client_login VARCHAR(100) PRIMARY KEY,
+                        client_password VARCHAR(100) NOT NULL,
+                        client_email VARCHAR(100),
+                        client_adress VARCHAR(100),
+                        client_tel VARCHAR(100)
 );
 CREATE TABLE order_tbl (
-    order_id INT AUTO_INCREMENT PRIMARY KEY,
-    client_login VARCHAR(100) NOT NULL,
-    order_datetime DATETIME NOT NULL,
-    order_pay ENUM('0','1') NOT NULL,
-    CONSTRAINT order_tbl_client_fk
-        FOREIGN KEY (client_login)  REFERENCES client (client_login)
+                           order_id INT AUTO_INCREMENT PRIMARY KEY,
+                           client_login VARCHAR(100) NOT NULL,
+                           order_datetime DATETIME NOT NULL,
+                           order_pay ENUM('0','1') NOT NULL,
+                           CONSTRAINT order_tbl_client_fk
+                               FOREIGN KEY (client_login)  REFERENCES client (client_login)
 );
 CREATE TABLE order_product (
-    order_id INT NOT NULL,
-    product_id INT NOT NULL,
-    product_count INT NOT NULL,
-    CONSTRAINT order_product_pk
-        PRIMARY KEY(order_id, product_id),
-    CONSTRAINT order_product_product_fk
-        FOREIGN KEY (product_id)  REFERENCES product (product_id),
-    CONSTRAINT order_product_order_tbl_fk
-        FOREIGN KEY (order_id)  REFERENCES order_tbl (order_id)
+                               order_id INT NOT NULL,
+                               product_id INT NOT NULL,
+                               product_count INT NOT NULL,
+                               CONSTRAINT order_product_pk
+                                   PRIMARY KEY(order_id, product_id),
+                               CONSTRAINT order_product_product_fk
+                                   FOREIGN KEY (product_id)  REFERENCES product (product_id),
+                               CONSTRAINT order_product_order_tbl_fk
+                                   FOREIGN KEY (order_id)  REFERENCES order_tbl (order_id)
 );
+
+CREATE VIEW catalog_view AS
+    SELECT category.category_id,category_name,subcategory.subcategory_id,subcategory_name FROM category,subcategory,product_catalog_tbl
+WHERE category.category_id=product_catalog_tbl.category_id AND subcategory.subcategory_id=product_catalog_tbl.subcategory_id
+GROUP BY subcategory_name,category_name,category_id,subcategory_id;

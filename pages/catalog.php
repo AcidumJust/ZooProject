@@ -19,11 +19,11 @@
             <p>Каталог</p>
             <ul class="catalog-block">
                 <?php
-                $link = mysqli_connect($host,$user,$password,$database) or die("Error".mysqli_error($link));
-                mysqli_set_charset($link,'utf8');
-                $res = mysqli_query($link,"SELECT * FROM category WHERE category_name != 'Акции' ORDER BY 1 DESC");
-                while ($row = mysqli_fetch_array($res)){
-                    echo "<li><a class='category-name' href=''>".$row['category_name']."</a></li>";
+                if (!empty($link)) {
+                    $res = mysqli_query($link,"SELECT * FROM category WHERE category_name != 'Акции' ORDER BY 1 DESC");
+                    while ($row = mysqli_fetch_array($res)){
+                        echo "<li><a class='category-name' href=''>".$row['category_name']."</a></li>";
+                    }
                 }
                 ?>
             </ul>

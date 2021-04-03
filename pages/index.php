@@ -14,17 +14,6 @@
 <header>
     <?php require_once ("../includes/header.php");?>
 </header>
-<!--<div>-->
-<!--    <ul>-->
-<!--    --><?php
-//    $link = mysqli_connect($host,$user,$password,$database) or die("Error".mysqli_error($link));
-//    mysqli_set_charset($link,'utf8');
-//    $res = mysqli_query($link,"SELECT * FROM category ORDER BY 1 DESC");
-//    while ($row = mysqli_fetch_array($res)){
-//        echo "<li>".$row['category_name']."</li>";
-//    }?>
-<!--    </ul>-->
-<!--</div>-->
 <main>
     <section class="catalog-section">
         <div class="catalog-block">
