@@ -11,6 +11,7 @@ main{
     width: 20%;
     border-radius: 10px;
     margin-top: 5px;
+    padding-bottom: 20px;
 }
 .catalog-section > p{
     font-size: 35px;
@@ -52,8 +53,10 @@ main{
 .product-item:hover{
     border-color: red;
 }
+
 .product-item > img{
-    width: 100%;
+    margin: auto;
+    max-height: 150px;
 }
 .product-item > p{
     width: 100%;

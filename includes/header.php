@@ -12,10 +12,14 @@ echo <<<HERE
                     <ul class="submenu-category"> 
 HERE;
 if (!empty($link)) {
-    $res = mysqli_query($link,"SELECT * FROM catalog_view ORDER BY 1");
-
-    while ($row = mysqli_fetch_array($res)){
-        echo "<li class='submenu-category-item'><a href=''>".$row['category_name']."</a><ul class='submenu-category-sublist'><li><a>Товары1</a></li></ul></li>";
+    $res1 = mysqli_query($link,"SELECT category_id,category_name FROM catalog_view GROUP BY 1 ORDER BY 1");
+    while ($row1 = mysqli_fetch_array($res1)){
+        echo "<li class='submenu-category-item'><a href='../pages/catalog.php?id=".$row1['category_id']."'>".$row1['category_name']."</a><ul class='submenu-category-sublist'>";
+    $res2 = mysqli_query($link,"SELECT subcategory_id,subcategory_name FROM catalog_view WHERE category_id=".$row1['category_id']." ORDER BY 1");
+        while ($row2 = mysqli_fetch_array($res2)){
+            echo"<li><a href='../pages/catalog.php?id=".$row1['category_id']."&sub_id=".$row2['subcategory_id']."'>".$row2['subcategory_name']."</a></li>";
+        }
+        echo"</ul></li>";
     }
 }
 echo <<<HERE

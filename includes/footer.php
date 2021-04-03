@@ -6,21 +6,21 @@ echo <<<HERE
         <p>Каталог</p>
 HERE;
 if (!empty($link)) {
-    $res = mysqli_query($link,"SELECT * FROM category WHERE category_name != 'Акции' ORDER BY 1 DESC");
+    $res = mysqli_query($link,"SELECT * FROM category WHERE category_name != 'Акции' ORDER BY 1");
     while ($row = mysqli_fetch_array($res)){
-        echo "<a href=''>".$row['category_name']."</a>";
+        echo "<a href='../pages/catalog.php?id=".$row['category_id']."'>".$row['category_name']."</a>";
     }
 }
 echo <<<HERE
     </div>
     <div class="bottom-about">
         <p>О компании</p>
-        <a href="">О нас</a>
+        <a href="index.php">О нас</a>
     </div>
     <div class="bottom-info">
         <p>Информация</p>
-        <a href="">Акции</a>
-        <a href="">Доставка и оплата</a>
+        <a href="index.php">Акции</a>
+        <a href="index.php">Доставка и оплата</a>
     </div>
 </div>
 HERE;
