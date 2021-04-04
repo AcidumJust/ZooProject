@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/catalog.css">
@@ -16,7 +16,7 @@
 <main>
     <div class="products">
         <section class="catalog-section">
-            <p>Каталог</p>
+            <p><a href='../pages/catalog.php'>Каталог</a></p>
             <ul class="catalog-block">
                 <?php
                 if (!empty($link)) {

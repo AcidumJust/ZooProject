@@ -8,7 +8,7 @@ echo <<<HERE
         <nav>
             <ul class="main-menu">
                 <li class="main-menu-item">О компании</li>
-                <li class="main-menu-item"><a>Каталог</a>
+                <li class="main-menu-item"><a href='../pages/catalog.php'>Каталог</a>
                     <ul class="submenu-category"> 
 HERE;
 if (!empty($link)) {

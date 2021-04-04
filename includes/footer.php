@@ -3,7 +3,7 @@ require "connection.php";
 echo <<<HERE
 <div class="bottom-container">
     <div class="bottom-catalog">
-        <p>Каталог</p>
+        <p><a href='../pages/catalog.php'>Каталог</a></p>
 HERE;
 if (!empty($link)) {
     $res = mysqli_query($link,"SELECT * FROM category WHERE category_name != 'Акции' ORDER BY 1");
