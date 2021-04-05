@@ -44,7 +44,7 @@
                     if($row1['product_id']!=1){ //пропуск заглушки
                         $count+=1;
                         echo '<a class="product-item" href="">
-                                   <img src="../images/img_products/'.$row1['product_image'].'.png"/>';
+                                   <img alt="Картинка" src="../images/img_products/'.$row1['product_image'].'.png"/>';
                         echo '<p class="product-name">'.$row1['product_name'].'</p>';
                         echo '<p class="product-price">'.$row1['product_price'].' руб.</p>';
                         echo '<form><button type="submit">Добавить</button></form></a>';
