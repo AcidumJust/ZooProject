@@ -33,9 +33,9 @@
             $count = 0;
             $param1 = "";
             $param2 = "";
-            if(isset($_GET['id'])){
+            if(isset($_GET['id']) && !empty($_GET['id'])){
                 $param1 = " AND a.category_id=".$_GET['id'];
-                if(isset($_GET['sub_id']))
+                if(isset($_GET['sub_id']) && !empty($_GET['sub_id']))
                     $param2 = " AND a.subcategory_id=".$_GET['sub_id'];
             }
             if (!empty($link)){
