@@ -255,3 +255,94 @@ nav{
     color: white;
     margin-top: 5px;
 }
+/*КОРЗИНА начало*/
+.cart-form{
+    position: absolute;
+    background-color: lightgrey;
+    border: grey solid 2px;
+    border-radius: 10px;
+    padding: 5px;
+    max-width: 200px;
+}
+.cart-form > p{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.cart-form > .cart-buttons> button{
+    padding: 2px;
+    margin: 0 2px;
+}
+.cart-item{
+    background-color: whitesmoke;
+    border: grey solid 2px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cart-buttons{
+    display: flex;
+    justify-content: center;
+}
+.cart-item > p > img{
+    height: 40px;
+    float: left;
+}
+.cart-item > p {
+    width: 100%;
+}
+
+
+
+
+.number {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+}
+.number input[type="number"] {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.number input[type="number"]::-webkit-outer-spin-button,
+.number input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+.number-minus {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    width: 20px;
+    padding: 0;
+    display: block;
+    text-align: center;
+    border: none;
+    border-right: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: 600;
+}
+.number-plus {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    width: 20px;
+    padding: 0;
+    display: block;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: 600;
+}
+/*КОРЗИНА конец*/

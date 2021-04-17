@@ -22,7 +22,7 @@ if (!empty($link)) {
         echo"</ul></li>";
     }
 }
-echo <<<HERE
+?>
                     </ul>
                 </li>
                 <li class="main-menu-item">Акции</li>
@@ -31,8 +31,35 @@ echo <<<HERE
             </ul>
         </nav>
         <div class="panel">
-            <div class="panel-block" title="Корзина" style="background-image: url('../images/korz.svg')">
-                <a href="../pages/index.php"></a>
+            <div class="panel-block" title="Корзина" style="background-image: url('../images/korz.svg')"></div>
+            <div class="cart-form">
+                <p>Корзина</p>
+                <div class="cart-item">
+                    <p><img src="../images/korz.svg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, pariatur.</p>
+                    <p>Цена</p>
+                    <div class="cart-counter">
+                        <div class="number">
+                            <button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">-</button>
+                            <input type="number" min="1" value="1" readonly>
+                            <button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <p><img src="../images/korz.svg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, provident.</p>
+                    <p>999999 р.</p>
+                    <div class="cart-counter">
+                        <div class="number">
+                            <button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">-</button>
+                            <input type="number" min="1" value="1" readonly>
+                            <button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-buttons">
+                    <button>Оформить</button>
+                    <button>Очистить</button>
+                </div>
             </div>
             <div id="lk" class="panel-block" title="Личный кабинет" style="background-image: url('../images/lk.svg')">
                 <a href="#dialog-main-1"></a>
@@ -43,4 +70,3 @@ echo <<<HERE
         <input type="text" class="search-input" placeholder="Найди меня...">
         <button class="search-button"></button>
     </div>
-HERE;
