@@ -257,6 +257,7 @@ nav{
 }
 /*КОРЗИНА начало*/
 .cart-form{
+    display: none;
     position: absolute;
     background-color: lightgrey;
     border: grey solid 2px;

@@ -64,3 +64,17 @@ CREATE VIEW catalog_view AS
     SELECT category.category_id,category_name,subcategory.subcategory_id,subcategory_name FROM category,subcategory,product_catalog_tbl
 WHERE category.category_id=product_catalog_tbl.category_id AND subcategory.subcategory_id=product_catalog_tbl.subcategory_id
 GROUP BY subcategory_name,category_name,category_id,subcategory_id;
+
+CREATE TABLE cart(
+    cart_id int auto_increment PRIMARY KEY,
+    client_login varchar(100) UNIQUE
+);
+
+CREATE TABLE cart_products(
+    cart_id int,
+    product_id int,
+    count int,
+    CONSTRAINT cart_product_pk PRIMARY KEY (cart_id,product_id),
+    CONSTRAINT cart_cart_fk FOREIGN KEY (cart_id) REFERENCES cart(cart_id),
+    CONSTRAINT cart_products_prod_fk FOREIGN KEY(product_id) REFERENCES product(product_id)
+);

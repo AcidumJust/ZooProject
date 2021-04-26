@@ -1,5 +1,6 @@
 <?php
 require_once 'connection.php';
+include 'cart_control.php';
 echo <<<HERE
 <div class="header-container">
         <div class="h1-block">
