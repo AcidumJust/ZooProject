@@ -8,9 +8,7 @@
 </head>
 <body>
 <!--Всплывающее окно входа-->
-<?php
-include_once ("../includes/dialog_windows.php");
-?>
+<?php include_once ("../includes/dialog_windows.php");?>
 <!--    -->
 <header>
     <?php include_once ("../includes/header.php");?>
@@ -49,7 +47,7 @@ include_once ("../includes/dialog_windows.php");
                                    <img alt="Картинка" src="../images/img_products/'.$row1['product_image'].'.png"/>';
                         echo '<p class="product-name">'.$row1['product_name'].'</p>';
                         echo '<p class="product-price">'.$row1['product_price'].' руб.</p>';
-                        echo '<form><button type="submit" name="btn_add" formaction="../includes/add_to_cart.php" formtarget="_blank" id="'.$row1['product_id'].'" value="'.$row1['product_id'].'" formmethod="post">Добавить</button></form></a>';
+                        echo '<form><button type="submit" name="btn_add" formaction="../includes/add_to_cart.php" formtarget="_blank" value="'.$row1['product_id'].'" formmethod="post">Добавить</button></form></a>';
                     }
                 }
             } if($count == 0) echo "<p>Упс, кажется здесь ничего нет</p>";?>
