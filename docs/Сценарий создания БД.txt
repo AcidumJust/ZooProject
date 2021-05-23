@@ -36,6 +36,8 @@ CREATE TABLE product_catalog_tbl (
 CREATE TABLE client (
                         client_login VARCHAR(100) PRIMARY KEY,
                         client_password VARCHAR(100) NOT NULL,
+                        client_name VARCHAR(100) NOT NULL,
+                        client_fam VARCHAR(100) NOT NULL,
                         client_email VARCHAR(100),
                         client_adress VARCHAR(100),
                         client_tel VARCHAR(100)

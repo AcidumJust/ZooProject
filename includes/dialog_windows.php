@@ -2,7 +2,7 @@
 include_once ('connection.php');
 if(isset($_POST['reg']))
     if(!empty($_POST['reg_login'])&&!empty($_POST['reg_fam'])&&!empty($_POST['reg_name'])&&!empty($_POST['reg_adress'])&&!empty($_POST['reg_email'])&&!empty($_POST['reg_tel'])&&!empty($_POST['reg_pass1'])&&!empty($_POST['reg_pass2'])){
-        $query="INSERT INTO client VALUE ('".$_POST['reg_login']."','".$_POST['reg_pass1']."','".$_POST['reg_email']."','".$_POST['reg_adress']."','".$_POST['reg_tel']."')";
+        $query="INSERT INTO client VALUE ('".$_POST['reg_login']."','".$_POST['reg_name']."','".$_POST['reg_fam']."','".$_POST['reg_pass1']."','".$_POST['reg_email']."','".$_POST['reg_adress']."','".$_POST['reg_tel']."')";
         if(isset($link)){
             mysqli_query($link,$query);
         }else echo "ERROR TI TYPOI";
@@ -16,7 +16,7 @@ echo <<<HERE
             <input type="text" name="login" placeholder="Login">
             <label>Пароль:</label>
             <input type="password" name="pass" placeholder="Password">
-            <button formmethod="post" formaction="#">Войти</button>
+            <button formmethod="post" formaction="../pages/lk_page.php">Войти</button>
             <button><a href="#dialog-main-2">Зарегистироваться</a></button>
         </form>
     </div>
