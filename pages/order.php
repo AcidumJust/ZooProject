@@ -1,31 +1,10 @@
-<?php
-include_once ('../includes/connection.php');
-if(session_status()!=2)
-    session_start();
-if (!empty($link)) {
-    if (isset($_GET['clear_cart'])) {
-        mysqli_query($link, "DELETE FROM cart_products WHERE cart_id=" . $_COOKIE['ID_cart']);
-    } else if (isset($_GET['del_1'])) {
-        if ($_POST['val'] > 1) {
-            mysqli_query($link, "UPDATE cart_products SET count=" . ($_POST['val'] - 1) . " WHERE cart_id=" . $_COOKIE['ID_cart'] . " AND product_id=" . $_POST['btn_min']);
-        } else {
-            mysqli_query($link, "DELETE FROM cart_products WHERE cart_id=" . $_COOKIE['ID_cart'] . " AND product_id=" . $_POST['btn_min']);
-        }
-    } else if (isset($_GET['add_1'])) {
-        mysqli_query($link, "UPDATE cart_products SET count=" . ($_POST['val'] + 1) . " WHERE cart_id=" . $_COOKIE['ID_cart'] . " AND product_id=" . $_POST['btn_add']);
-    } else if (isset($_GET['del_all'])) {
-        mysqli_query($link, "DELETE FROM cart_products WHERE cart_id=" . $_COOKIE['ID_cart'] . " AND product_id=" . $_POST['btn_del_all']);
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <title>Зазказ</title>
     <link rel="stylesheet" href="../styles/basic.css">
     <link rel="stylesheet" href="../styles/cart.css">
-    <title>Каталог</title>
 </head>
 <body>
 <!--Всплывающее окно входа-->
@@ -38,7 +17,7 @@ if (!empty($link)) {
     <section class="cart-info">
         <div class="info">
             <form>
-                <h3>Корзина</h3>
+                <h3>Зазказ</h3>
                 <?php
                 $sum=0;
                 $res1 = mysqli_query($link,"SELECT * FROM cart_products WHERE cart_id = ".$_COOKIE['ID_cart']);
@@ -49,17 +28,16 @@ if (!empty($link)) {
                 }
                 ?>
                 <p>Итого: <?php echo $sum;?> руб.</p>
-                <button formmethod="post" <?php if(isset($_SESSION["status"]) && $_SESSION["status"]) echo 'formaction="./order.php"'; else echo 'formaction="./cart.php"';?> >Оформить заказ</button>
-                <button formaction="./cart.php?clear_cart" formmethod="post">Очистить корзину</button>
+                <?php if(isset($_SESSION["status"]) && $_SESSION["status"]) echo '<button name="order" formaction="lk_page.php" formmethod="post">Оформить заказ</button>';?>
             </form>
         </div>
     </section>
     <section class="cart-items">
         <?php
-            if (!empty($link)) {
+        if (!empty($link)) {
             $res1 = mysqli_query($link,"SELECT * FROM cart_products WHERE cart_id = ".$_COOKIE['ID_cart']." ORDER BY 1");
             if(mysqli_num_rows($res1)<1){
-                echo "Корзина пуста";
+                echo "Заказ пуст";
             }
             while ($row1 = mysqli_fetch_array($res1)){
                 $res2 = mysqli_query($link,"SELECT * FROM product WHERE product_id = ".$row1["product_id"]);
@@ -69,13 +47,10 @@ if (!empty($link)) {
                     <img src="../images/img_products/'.$row2["product_image"].'.png">
                     <p>'.$row2["product_name"].'</p>
                     <form class="number">
-                            <button class="number-minus" name="btn_min" value="'.$row1["product_id"].'" formaction="./cart.php?del_1" formmethod="post">-</button>
                             <input type="number" min="0" name="val" value="'.$row1["count"].'" readonly>
-                            <button class="number-plus" name="btn_add" value="'.$row1["product_id"].'" formaction="./cart.php?add_1" formmethod="post">+</button>     
                     </form>
                     <form class="price">
                         <p>Цена: '.($row2["product_price"]*$row1["count"]).' руб.</p>
-                        <button name="btn_del_all" value="'.$row1["product_id"].'" formaction="./cart.php?del_all" formmethod="post">Удалить</button>
                     </form>
                 </div>
                 ';
@@ -87,5 +62,6 @@ if (!empty($link)) {
 <footer>
     <?php include_once ("../includes/footer.php");?>
 </footer>
+
 </body>
 </html>

@@ -25,6 +25,20 @@ include_once ('../includes/connection.php');
                    client_tel='".$_POST["reg_tel"]."',
                    client_password='".$_POST["reg_pass1"]."' WHERE client_login='".$_SESSION["login"]."'");
     }
+    if(isset($_POST["order"])){
+        if (!empty($link)) {
+            $res1 = mysqli_query($link, "SELECT * FROM cart_products WHERE cart_id=".$_COOKIE["ID_cart"]);
+            if (mysqli_num_rows($res1) > 0) {
+                mysqli_query($link,"INSERT INTO order_tbl(client_login, order_datetime, order_pay) VALUE ('".$_SESSION["login"]."','".date('Y-m-d h:i:s', time())."','1')");
+                $id=mysqli_query($link,"SELECT MAX(order_id) as id FROM order_tbl WHERE client_login='".$_SESSION["login"]."'");
+                $id=mysqli_fetch_array($id);
+                while ($row1=mysqli_fetch_array($res1)){
+                    mysqli_query($link, "INSERT INTO order_product(order_id, product_id, product_count) VALUE (".$id['id'].",".$row1['product_id'].",".$row1['count'].")");
+                }
+                mysqli_query($link, "DELETE FROM cart_products WHERE cart_id=".$_COOKIE["ID_cart"]);
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -72,6 +86,9 @@ include_once ('../includes/connection.php');
         }
         else echo "Ошибка";
         ?>
+    </section>
+    <section class="order">
+
     </section>
 </main>
 <footer>
