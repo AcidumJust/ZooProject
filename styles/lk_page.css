@@ -1,0 +1,11 @@
+.lk_form {
+    text-align: left;
+    width: min-content;
+    margin: 20px auto 20px auto;
+}
+.lk_form button{
+    width: 100%;
+    display: flex;
+    margin-top: 5px;
+    justify-content: center;
+}

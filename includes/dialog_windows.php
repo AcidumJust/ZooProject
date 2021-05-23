@@ -5,7 +5,7 @@ if(isset($_POST['reg']))
         $query="INSERT INTO client VALUE ('".$_POST['reg_login']."','".$_POST['reg_name']."','".$_POST['reg_fam']."','".$_POST['reg_pass1']."','".$_POST['reg_email']."','".$_POST['reg_adress']."','".$_POST['reg_tel']."')";
         if(isset($link)){
             mysqli_query($link,$query);
-        }else echo "ERROR TI TYPOI";
+        }
     }
 echo <<<HERE
 <div id="dialog-main-1" class="dialog-main">

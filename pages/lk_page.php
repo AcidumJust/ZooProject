@@ -1,6 +1,7 @@
 <?php
 include_once ('../includes/connection.php');
-
+    if(session_status()!=2)
+        session_start();
     if(!isset($_SESSION["status"]) || !$_SESSION["status"]) {
         $_SESSION["status"] = false;
         if (isset($_POST["login"]) && isset($_POST["pass"])) {
@@ -16,7 +17,13 @@ include_once ('../includes/connection.php');
     }
     if(isset($_POST["save"])){
         mysqli_query($link,"UPDATE client SET 
-                  client_login=");
+                  client_login='".$_POST["reg_login"]."',
+                   client_fam='".$_POST["reg_fam"]."',
+                   client_name='".$_POST["reg_name"]."',
+                   client_adress='".$_POST["reg_adress"]."',
+                   client_email='".$_POST["reg_email"]."',
+                   client_tel='".$_POST["reg_tel"]."',
+                   client_password='".$_POST["reg_pass1"]."' WHERE client_login='".$_SESSION["login"]."'");
     }
 ?>
 <!DOCTYPE html>
@@ -37,14 +44,13 @@ include_once ('../includes/connection.php');
 </header>
 <main>
     <section class="lk-section">
-        <p>Личный кабинет</p>
         <?php
         if($_SESSION["status"]) {
             $res1 = mysqli_query($link, "SELECT * FROM client WHERE client_login='".$_SESSION["login"]."'");
             $row = mysqli_fetch_array($res1);
-            echo $row[1];
             echo <<<HERE
-        <form>
+        <form class="lk_form">
+        <p align="center">Личный кабинет</p>
             <label>Логин:</label>
             <input type="text" name="reg_login" placeholder="Login" value="$row[0]">
             <label>Фамилия:</label>

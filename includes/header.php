@@ -1,7 +1,8 @@
 <?php
+if(session_status()!=2)
+    session_start();
 require_once 'connection.php';
 include 'cart_control.php';
-session_start();
 $lk_href = "#dialog-main-1";
 if(isset($_SESSION["status"]) && $_SESSION["status"]){
     $lk_href = "../pages/lk_page.php";
